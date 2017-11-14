@@ -1,4 +1,5 @@
 const mongoClient=require("mongodb").MongoClient;
+const ObjectId=require('mongodb').ObjectID;
 const url="mongodb://127.0.0.1:27017/library";
 const bookColl="books";
 
@@ -36,7 +37,7 @@ const updateBook=(req,res,next)=>{
             throw err;
         }else{
             const query={
-                "isbn":req.params.isbn
+                "_id":ObjectId(req.params.id)
             }
             db.collection(bookColl).updateOne(query,req.body,(err,respond)=>{
                 if(err){
@@ -55,7 +56,7 @@ const deleteBook=(req,res,next)=>{
             throw err;
         }else{
             const query={
-                "isbn":req.params.isbn
+                "_id":ObjectId(req.params.id)
             }
             db.collection(bookColl).deleteOne(query,(err,respond)=>{
                 if(err){

@@ -8,9 +8,9 @@ router.get("/all",libraryController.getAllBooks);
 router.post("/add",libraryController.addBook);
 
 // Update book
-router.put("/update/:isbn",libraryController.updateBook);
+router.put("/update/:id",libraryController.updateBook);
 
 // Delete book
-router.delete("/delete/:isbn",libraryController.deleteBook);
+router.delete("/delete/:id",libraryController.deleteBook);
 
 module.exports=router;
