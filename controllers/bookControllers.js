@@ -8,7 +8,12 @@ var findOne = (req, res) => {
       console.log(err)
     }
     else {
-      db.collection("books").findOne({}, (err, result) => {
+
+      var id = {
+        _id: new ObjectID(req.params.id)
+      }
+
+      db.collection("books").findOne(id, (err, result) => {
         res.send(result)
         db.close()
       })
@@ -51,7 +56,7 @@ var deleteOne = (req, res) => {
     }
     else {
       var id = {
-        _id: ObjectID(req.params.id)
+        _id: new ObjectID(req.params.id)
       }
 
       db.collection("books").deleteOne(id, (err, obj) => {
@@ -75,7 +80,7 @@ var editOne = (req, res) => {
     else {
 
       var id = {
-        _id: ObjectID(req.params.id)
+        _id: new ObjectID(req.params.id)
       }
 
       var newValue = {
