@@ -1,0 +1,24 @@
+{
+  "name": "mongodb-crud",
+  "version": "1.0.0",
+  "description": "crud with mongodb (native drive)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianmax/mongodb-crud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianmax/mongodb-crud/issues"
+  },
+  "homepage": "https://github.com/ianmax/mongodb-crud#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33"
+  }
+}
