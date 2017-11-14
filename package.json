@@ -2,8 +2,7 @@
   "name": "mongodb-crud",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
