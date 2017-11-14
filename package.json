@@ -4,14 +4,12 @@
   "description": "crud with mongodb (native drive)",
   "main": "index.js",
   "scripts": {
-    "dev" : "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/miracle-fox-2017/mongodb-crud.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -21,7 +19,6 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongodb": "^2.2.33",
-    "morgan": "^1.9.0"
+    "mongodb": "^2.2.33"
   }
 }
