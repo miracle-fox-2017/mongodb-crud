@@ -1,13 +1,13 @@
 const mongoClient=require("mongodb").MongoClient;
 const url="mongodb://127.0.0.1:27017/library";
-const userColl="books";
+const bookColl="books";
 
 const getAllBooks=(req,res,next)=>{
     mongoClient.connect(url,(err,db)=>{
         if(err){
             throw err;
         }else{
-            db.collection(userColl).find({}).toArray((err,respond)=>{
+            db.collection(bookColl).find({}).toArray((err,respond)=>{
                 res.send(respond);
             })
         }
@@ -19,7 +19,7 @@ const addBook=(req,res,next)=>{
         if(err){
             throw err;
         }else{
-            db.collection(userColl).insertOne(req.body,(err,respond)=>{
+            db.collection(bookColl).insertOne(req.body,(err,respond)=>{
                 if(err){
                     throw err;
                 }else{
@@ -38,7 +38,7 @@ const updateBook=(req,res,next)=>{
             const query={
                 "isbn":req.params.isbn
             }
-            db.collection(userColl).updateOne(query,req.body,(err,respond)=>{
+            db.collection(bookColl).updateOne(query,req.body,(err,respond)=>{
                 if(err){
                     throw err;
                 }else{
@@ -57,7 +57,7 @@ const deleteBook=(req,res,next)=>{
             const query={
                 "isbn":req.params.isbn
             }
-            db.collection(userColl).deleteOne(query,(err,respond)=>{
+            db.collection(bookColl).deleteOne(query,(err,respond)=>{
                 if(err){
                     throw err;
                 }else{
