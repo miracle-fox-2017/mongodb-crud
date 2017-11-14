@@ -1,27 +1,16 @@
 {
   "name": "mongodb-crud",
-  "version": "1.0.0",
-  "description": "crud with mongodb (native drive)",
-  "main": "index.js",
-  "scripts": {
-    "dev" : "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/miracle-fox-2017/mongodb-crud.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/miracle-fox-2017/mongodb-crud/issues"
-  },
-  "homepage": "https://github.com/miracle-fox-2017/mongodb-crud#readme",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.15.5",
     "mongodb": "^2.2.33",
-    "morgan": "^1.9.0"
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
   }
 }
