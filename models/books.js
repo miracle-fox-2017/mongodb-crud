@@ -21,11 +21,10 @@ class Book {
   static insert(newBookData) {
     return new Promise(function(resolve, reject) {
       MongoClient.connect(url, function(err, db) {
-        // Insert document
+        // Insert
         if (newBookData._id) {
           newBookData._id = ObjectId(newBookData._id)
         }
-        // console.log(newBookData);
         db.collection('books').insert(newBookData, function(err, result) {
           if(!err){
             resolve(result)
@@ -40,7 +39,7 @@ class Book {
   static update(id, newBookData) {
     return new Promise(function(resolve, reject) {
       MongoClient.connect(url, function(err, db) {
-        // Update/edit document
+        // Update/edit
         db.collection("books").updateOne({_id : ObjectId(id)}, newBookData, function(err, result) {
           if (!err){
             resolve(result)
@@ -55,7 +54,7 @@ class Book {
   static remove(id) {
     return new Promise(function(resolve, reject) {
       MongoClient.connect(url, function(err, db) {
-        // Update/edit document
+        // Delete
         db.collection("books").deleteOne({_id : ObjectId(id)}, function(err, result) {
           if (!err){
             resolve(result)
