@@ -65,6 +65,7 @@ let editData = (req, res) => {
   })
 }
 
+//delete data
 let deleteData = (req, res) => {
   MongoClient.connect(url, function(err, db) {
     var myquery = { _id: new ObjectID(req.params.id) };
