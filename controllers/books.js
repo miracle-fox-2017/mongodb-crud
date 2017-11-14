@@ -39,12 +39,13 @@ const update = (req, res) => {
 			var col = db.collection('books');
 
 		  assert.equal(null, err);
-		  console.log("Connected correctly to server");
-				col.update({ "_id" : ObjectId(req.params.id) },{$set:req.body}, (err)=>{
+				col.updateOne({ _id : ObjectId(req.params.id) },req.body, (err, tes)=>{
+					console.log(err, tes)
 					if(err){
+						 db.close();
 						res.status(500).send('failed')
 					}
-					res.status(201).send('created')
+					res.status(201).send('updated')
 				});
 				
 		})
@@ -58,6 +59,7 @@ const destroy = (req, res) => {
 		  console.log("Connected correctly to server");
 				col.deleteOne({ "_id" : ObjectId(req.params.id) }, (err, success)=> {
 					if(err){
+						 db.close();
 						res.status(500).send(err)
 					}
 					res.status(200).send('deleted') 
