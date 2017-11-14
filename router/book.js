@@ -1,5 +1,5 @@
 const router=require("express").Router();
-const libraryController=require("../controller/library");
+const libraryController=require("../controller/book");
 
 // Retreive all books
 router.get("/all",libraryController.getAllBooks);
