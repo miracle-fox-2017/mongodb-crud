@@ -9,7 +9,6 @@ class Library{
   getAll(cb){
     MongoClient.connect(this.url, function(err, db) {
       if(err){
-        // res.status(500).send(err)
         cb(err, null)
       } else {
         db.collection('books').find({}).toArray((err, docs)=>{
@@ -25,7 +24,6 @@ class Library{
     MongoClient.connect(this.url, function(err, db) {
       if(err){
         cb(err, null)
-        // res.status(500).send(err)
       } else {
         let obj = {
             isbn: req.body.isbn,
@@ -39,7 +37,6 @@ class Library{
         db.collection('books').insertOne(obj, function(err, result) {
           db.close();
           cb(null, result)
-          // res.send(result)
         })
         
       }
@@ -62,10 +59,12 @@ class Library{
       var myquery = { _id: ObjectID(req.params.id) };
       
       db.collection("books").updateOne(myquery, newvalues, function(err, result) {
-        if (err) throw err;
         db.close();
-        cb(null, result)
-        // res.send({result})
+        if(err){
+          cb(err, null)
+        } else {
+          cb(null, result)
+        }
       });
     }
       

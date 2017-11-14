@@ -1,8 +1,3 @@
-const MongoClient = require('mongodb').MongoClient;
-const ObjectID = require('mongodb').ObjectID
-// Connection URL
-const url = 'mongodb://localhost:27017/library';
-
 // require model
 const ModelLibrary = require('../models/library')
 const Library = new ModelLibrary()
