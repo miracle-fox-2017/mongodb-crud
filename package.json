@@ -1,0 +1,29 @@
+{
+  "name": "mongodb-crud",
+  "version": "1.0.0",
+  "description": "crud with mongodb (native drive)",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev" : "nodemon app.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azhariemuhammad/mongodb-crud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azhariemuhammad/mongodb-crud/issues"
+  },
+  "homepage": "https://github.com/azhariemuhammad/mongodb-crud#readme"
+}
